@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+@keyframes movimentar {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
 * {
   font-family: 'Raleway', sans-serif;
   margin: 0;
@@ -13,37 +23,80 @@ body {
 
 .principal {
   align-items: center;
-  border-top: 10px solid rgb(50,205,50);
+  border-top: 10px solid rgb(133, 17, 75);
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
 }
 
+.cartao {
+  border-radius: 20px;
+  box-shadow: 1px 20px 24px #333;
+}
+
+.cartao-cabecalho {
+  background-color: rgb(133, 17, 75);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-top: 30px;
+}
+
 .minha-foto {
-  border: 5px solid rgb(50, 205, 50);
   border-radius: 50%;
-  box-shadow: 2px 2px 20px rgb(50, 205, 50);
-  heigth: 256px;
-  width: 256px;
+  box-shadow: 2px 2px 20px #333;
+  display: block;
+  height: 200px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.ondas {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.parallax>use {
+  animation: movimentar 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
 }
 
 .conteudo {
+  background-color: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 30px 10px;
   text-align: center;
 }
 
 .titulo {
-  color: rgb(50, 205, 50);
-  font-size: 50px;
+  color: rgb(133, 17, 75);
+  font-size: 24px;
   font-weight: 900;
-  margin: 20px 0 30px 0;
-  text-decoration: underline;
-}
-
-.texto {
-  color: #333;
-  font-size: 18px;
-  line-height: 1.5em;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-height: 415px) {
